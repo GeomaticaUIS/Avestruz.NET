@@ -1,0 +1,63 @@
+
+.boton{
+  background: #3A4F63;
+  border: 2px solid #ccc;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Roboto", Arial;
+  font-size: 16px;
+  padding: 3px;
+  width: 60%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.7s ease;
+  border-radius: 4px;
+}
+.boton:hover {
+  background: #1976D2;
+}
+.buscar{
+    width: 20%;
+}
+.contenedor .opcion{
+    background: #FFFFFF;
+    color: #333;
+    width: 100%;
+    font-family: "Roboto",Arial, Helvetica, sans-serif,'Trebuchet MS';
+    transition: all 0.3s ease;
+}
+.contenedor .opcion:hover{
+    background: #BFCBD6;
+}
+.floatl__input {
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  margin-top: 0;
+  margin-left: 0;
+  padding: 11px 8px;
+  font-size: 15px;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+}
+
+.floatl__input::-moz-selection {
+  color: white;
+  background-color: #2a8dea;
+}
+
+.floatl__input::selection {
+  color: white;
+  background-color: #2a8dea;
+}
+
+.floatl__input:focus {
+  border-color: #2a8dea;
+}
+
+input.floatl__input {
+  height: 42px;
+}

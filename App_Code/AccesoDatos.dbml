@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PROYECTOSGEOMATICA" Class="AccesoDatosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.1.90.14;Initial Catalog=PROYECTOSGEOMATICA;User ID=Consolidado" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PROYECTOSGEOMATICAConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Productos" Member="Productos">
+    <Type Name="Productos">
+      <Column Name="Id_Productos" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Proyectos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre_Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Descripción_Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Archivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Id_TipoProducto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Productos_Participantes" Member="Participantes" ThisKey="Id_Productos" OtherKey="Productos_Id" Type="Participantes" />
+      <Association Name="Productos_Tipo_Producto" Member="Tipo_Producto" ThisKey="Id_Productos" OtherKey="Id_TipoProducto" Type="Tipo_Producto" />
+      <Association Name="Proyectos_Productos" Member="Proyectos" ThisKey="Id_Proyectos" OtherKey="Id_Proyecto" Type="Proyectos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo_Acta" Member="Tipo_Acta">
+    <Type Name="Tipo_Acta">
+      <Column Name="Id_Tipo_Acta" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tipo_Acta" Member="Tipo_Acta1" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Tipo_Acta_Actas" Member="Actas" ThisKey="Id_Tipo_Acta" OtherKey="Tipo_Acta" Type="Actas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo_Adicion" Member="Tipo_Adicion">
+    <Type Name="Tipo_Adicion">
+      <Column Name="Id_Adicion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tipo_Adicion" Member="Tipo_Adicion1" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Tipo_Adicion_Otrosí_Adiciones" Member="Otrosí_Adiciones" ThisKey="Id_Adicion" OtherKey="Tipo_Otrosi_Adición" Type="Otrosí_Adiciones" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo_Contrato_Convenio" Member="Tipo_Contrato_Convenio">
+    <Type Name="Tipo_Contrato_Convenio">
+      <Column Name="Id_Tipo_Convenio_Contrato" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tipo_Convenio_Contrato" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Tipo_Contrato_Convenio_Contrato_Convenio" Member="Contrato_Convenio" ThisKey="Id_Tipo_Convenio_Contrato" OtherKey="Tipo" Type="Contrato_Convenio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.imagenes" Member="imagenes">
+    <Type Name="imagenes">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="image" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="coordenadasX" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="coordenadasY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuarios" Member="Usuarios">
+    <Type Name="Usuarios">
+      <Column Name="Id_Usuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Rol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Correo_Electronico" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Rol_Usuarios" Member="Rol" ThisKey="Id_Rol" OtherKey="Id_Rol" Type="Rol" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rol" Member="Rol">
+    <Type Name="Rol">
+      <Column Name="Id_Rol" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre_Rol" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Rol_Usuarios" Member="Usuarios" ThisKey="Id_Rol" OtherKey="Id_Rol" Type="Usuarios" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Proyectos" Member="Proyectos">
+    <Type Name="Proyectos">
+      <Column Name="Id_Proyecto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Valor" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Propuesta_Pdf" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Fecha_Propuesta" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Acta_Claustro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Acta_Consejo_Escuela" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Acta_Consejo_Facultad" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Registro_VIE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Fecha_Registro_VIE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Formato_Registro_VIE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Carta_Presentación" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Memoria_Tecnica" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Presupuesto_interno" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Proyectos_Productos" Member="Productos" ThisKey="Id_Proyecto" OtherKey="Id_Proyectos" Type="Productos" />
+      <Association Name="Proyectos_Compromisos_Academicos" Member="Compromisos_Academicos" ThisKey="Id_Proyecto" OtherKey="Id_Proyecto" Type="Compromisos_Academicos" />
+      <Association Name="Proyectos_Informe_CompromisosAcademicos" Member="Informe_CompromisosAcademicos" ThisKey="Id_Proyecto" OtherKey="Id_Proyecto" Type="Informe_CompromisosAcademicos" />
+      <Association Name="Proyectos_Contrato_Convenio" Member="Contrato_Convenio" ThisKey="Id_Proyecto" OtherKey="Id_Proyecto" Type="Contrato_Convenio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estado_Contrato" Member="Estado_Contrato">
+    <Type Name="Estado_Contrato">
+      <Column Name="Id_Estado_Contrato" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre_Estado" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Estado_Contrato_Contrato_Convenio" Member="Contrato_Convenio" ThisKey="Id_Estado_Contrato" OtherKey="Estado" Type="Contrato_Convenio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Participantes" Member="Participantes">
+    <Type Name="Participantes">
+      <Column Name="Productos_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Colaborador_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Rol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Productos_Participantes" Member="Productos" ThisKey="Productos_Id" OtherKey="Id_Productos" Type="Productos" IsForeignKey="true" />
+      <Association Name="Roles_Colaboradores_Participantes" Member="Roles_Colaboradores" ThisKey="Rol" OtherKey="Id_Rol_Colaborador" Type="Roles_Colaboradores" IsForeignKey="true" />
+      <Association Name="Colaboradores_Participantes" Member="Colaboradores" ThisKey="Colaborador_Id" OtherKey="Id_Colaborador" Type="Colaboradores" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles_Colaboradores" Member="Roles_Colaboradores">
+    <Type Name="Roles_Colaboradores">
+      <Column Name="Id_Rol_Colaborador" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre_Rol" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Roles_Colaboradores_Participantes" Member="Participantes" ThisKey="Id_Rol_Colaborador" OtherKey="Rol" Type="Participantes" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo_Compromiso_Academico" Member="Tipo_Compromiso_Academico">
+    <Type Name="Tipo_Compromiso_Academico">
+      <Column Name="Id_Tipo_Compromiso" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tipo_Compromiso_Academico" Member="Tipo_Compromiso_Academico1" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Tipo_Compromiso_Academico_Compromisos_Academicos" Member="Compromisos_Academicos" ThisKey="Id_Tipo_Compromiso" OtherKey="Tipo_Compromiso" Type="Compromisos_Academicos" />
+      <Association Name="Tipo_Compromiso_Academico_Informe_CompromisosAcademicos" Member="Informe_CompromisosAcademicos" ThisKey="Id_Tipo_Compromiso" OtherKey="Id_Tipo_Compromiso" Type="Informe_CompromisosAcademicos" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Compromisos_Academicos" Member="Compromisos_Academicos">
+    <Type Name="Compromisos_Academicos">
+      <Column Name="Id_Compromiso_Academico" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Proyecto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tipo_Compromiso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Detalles_Compromiso" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Compromisos_Academicos_Autores_Compromisos" Member="Autores_Compromisos" ThisKey="Id_Compromiso_Academico" OtherKey="Id_Compromiso" Type="Autores_Compromisos" />
+      <Association Name="Tipo_Compromiso_Academico_Compromisos_Academicos" Member="Tipo_Compromiso_Academico" ThisKey="Tipo_Compromiso" OtherKey="Id_Tipo_Compromiso" Type="Tipo_Compromiso_Academico" IsForeignKey="true" />
+      <Association Name="Proyectos_Compromisos_Academicos" Member="Proyectos" ThisKey="Id_Proyecto" OtherKey="Id_Proyecto" Type="Proyectos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Actas" Member="Actas">
+    <Type Name="Actas">
+      <Column Name="Id_Actas" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tipo_Acta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre_Contrato_Convenio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha_Acta" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Descripción" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Archivo_Pdf" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Fecha_Actividad" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Tipo_Acta_Actas" Member="Tipo_Acta1" ThisKey="Tipo_Acta" OtherKey="Id_Tipo_Acta" Type="Tipo_Acta" IsForeignKey="true" />
+      <Association Name="Contrato_Convenio_Actas" Member="Contrato_Convenio" ThisKey="Nombre_Contrato_Convenio" OtherKey="Id_Convenio_Contrato" Type="Contrato_Convenio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Otrosí_Adiciones" Member="Otrosí_Adiciones">
+    <Type Name="Otrosí_Adiciones">
+      <Column Name="Id_Otrosí" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Convenio_Contrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tipo_Otrosi_Adición" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Fecha_Otrosi_Adición" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Descripción" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Archivo_Pdf" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Valor_Adicional" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Tiempo_Adicional" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Tipo_Adicion_Otrosí_Adiciones" Member="Tipo_Adicion" ThisKey="Tipo_Otrosi_Adición" OtherKey="Id_Adicion" Type="Tipo_Adicion" IsForeignKey="true" />
+      <Association Name="Contrato_Convenio_Otrosí_Adiciones" Member="Contrato_Convenio" ThisKey="Convenio_Contrato" OtherKey="Id_Convenio_Contrato" Type="Contrato_Convenio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Colaboradores" Member="Colaboradores">
+    <Type Name="Colaboradores">
+      <Column Name="Id_Colaborador" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre_Colaborador" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Cedula_Ciudadania" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Colaboradores_Participantes" Member="Participantes" ThisKey="Id_Colaborador" OtherKey="Colaborador_Id" Type="Participantes" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Informe_CompromisosAcademicos" Member="Informe_CompromisosAcademicos">
+    <Type Name="Informe_CompromisosAcademicos">
+      <Column Name="Id_Informe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Proyecto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Tipo_Compromiso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Proyectos_Informe_CompromisosAcademicos" Member="Proyectos" ThisKey="Id_Proyecto" OtherKey="Id_Proyecto" Type="Proyectos" IsForeignKey="true" />
+      <Association Name="Tipo_Compromiso_Academico_Informe_CompromisosAcademicos" Member="Tipo_Compromiso_Academico" ThisKey="Id_Tipo_Compromiso" OtherKey="Id_Tipo_Compromiso" Type="Tipo_Compromiso_Academico" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Autores_Compromisos" Member="Autores_Compromisos">
+    <Type Name="Autores_Compromisos">
+      <Column Name="Id_Autor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Compromiso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre_Autor" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Codigo_Autor" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Association Name="Compromisos_Academicos_Autores_Compromisos" Member="Compromisos_Academicos" ThisKey="Id_Compromiso" OtherKey="Id_Compromiso_Academico" Type="Compromisos_Academicos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Entidad_Contratante" Member="Entidad_Contratante">
+    <Type Name="Entidad_Contratante">
+      <Column Name="Id_Entidad_Contratante" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre_Entidad" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Nit" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Entidad_Contratante_Contrato_Convenio" Member="Contrato_Convenio" ThisKey="Id_Entidad_Contratante" OtherKey="Entidad_Contratante" Type="Contrato_Convenio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo_Producto" Member="Tipo_Producto">
+    <Type Name="Tipo_Producto">
+      <Column Name="Id_TipoProducto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tipo_Producto" Member="Tipo_Producto1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Productos_Tipo_Producto" Member="Productos" ThisKey="Id_TipoProducto" OtherKey="Id_Productos" Type="Productos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Contrato_Convenio" Member="Contrato_Convenio">
+    <Type Name="Contrato_Convenio">
+      <Column Name="Id_Convenio_Contrato" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Proyecto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Entidad_Contratante" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Objeto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Valor" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Valor_Contratado" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Valor_Liquidado" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Fecha_Suscripción" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Fecha_Inicio" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Fecha_Terminación" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Archivo_Pdf" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Carta_Solicitud_Propuesta" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Terminos_referencia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Estudios_Previos" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Certificados_Disponibilida_Presupuestal" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Registro_Presupuestal" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Contrato_Convenio_Actas" Member="Actas" ThisKey="Id_Convenio_Contrato" OtherKey="Nombre_Contrato_Convenio" Type="Actas" />
+      <Association Name="Contrato_Convenio_Otrosí_Adiciones" Member="Otrosí_Adiciones" ThisKey="Id_Convenio_Contrato" OtherKey="Convenio_Contrato" Type="Otrosí_Adiciones" />
+      <Association Name="Entidad_Contratante_Contrato_Convenio" Member="Entidad_Contratante1" ThisKey="Entidad_Contratante" OtherKey="Id_Entidad_Contratante" Type="Entidad_Contratante" IsForeignKey="true" />
+      <Association Name="Proyectos_Contrato_Convenio" Member="Proyectos" ThisKey="Id_Proyecto" OtherKey="Id_Proyecto" Type="Proyectos" IsForeignKey="true" />
+      <Association Name="Tipo_Contrato_Convenio_Contrato_Convenio" Member="Tipo_Contrato_Convenio" ThisKey="Tipo" OtherKey="Id_Tipo_Convenio_Contrato" Type="Tipo_Contrato_Convenio" IsForeignKey="true" />
+      <Association Name="Estado_Contrato_Contrato_Convenio" Member="Estado_Contrato" ThisKey="Estado" OtherKey="Id_Estado_Contrato" Type="Estado_Contrato" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
