@@ -1,77 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menus/Menu_Inicial.master" AutoEventWireup="true" CodeFile="Usuarios.aspx.cs" Inherits="Usuarios" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css" />
     <script defer="defer" type="text/javascript" src="https://code.getmdl.io/1.1.3/material.min.js"></script>
     <link href="../Styles/Lista.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
-    <style type="text/css">        
-        .style1
-        {
-            width: 253px;
-        }
-        .style4
-        {
-            width: 200px;
-        }
-        .style5
-        {
-            width: 70px;
-        }
-        .style6
-        {
-            width: 121px;
-        }
-        .style7
-        {
-            width: 130px;
-        }        
-        .style8
-        {
-            width: 70px;
-            height: 34px;
-        }
-        .style9
-        {
-            width: 130px;
-            height: 34px;
-        }
-        .style10
-        {
-            width: 200px;
-            height: 34px;
-        }
-        .style11
-        {
-            width: 121px;
-            height: 34px;
-        }
-        .style12
-        {
-            width: 253px;
-            height: 34px;
-        }
-        h1{
-            font-size: 36px;
-            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-weight: 500;
-            line-height: 1.1;
-            color: inherit;
-            margin: .67em 0;
-        }
-        .dropdownlist{
-            border: 1px solid #e6e6e6;
-            border-radius: 3px;
-        }
-        .page{
-            width:80%;
-        }
-    </style>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div align="center">

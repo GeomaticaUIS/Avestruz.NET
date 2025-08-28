@@ -1,12 +1,181 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "\\\\10.1.90.10\\coord\\Salas e Inventario\\Auxiliatura\\2024-2025\\2025\\web\\ProyectosGeomatica\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|c:\\users\\marbin.arevalo.geomaticaad\\documents\\github\\avestruz.net\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|solutionrelative:default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\estilos.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|solutionrelative:estilos.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\modulo_inicio\\buscar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|solutionrelative:modulo_inicio\\buscar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\modulo_inicio\\buscar2.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|solutionrelative:modulo_inicio\\buscar2.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\modulo_inicio\\usuarios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|solutionrelative:modulo_inicio\\usuarios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\modulo_inicio\\otros.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|solutionrelative:modulo_inicio\\otros.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\modulo_inicio\\lista_editar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|solutionrelative:modulo_inicio\\lista_editar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\modulo_inicio\\listaver.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|solutionrelative:modulo_inicio\\listaver.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\modulo_inicio\\lista_ver.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|solutionrelative:modulo_inicio\\lista_ver.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\modulo_inicio\\lista.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AECD1223-94E7-438A-B070-9B82612009AB}|C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET|solutionrelative:modulo_inicio\\lista.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Buscar.aspx",
+              "DocumentMoniker": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Modulo_Inicio\\Buscar.aspx",
+              "RelativeDocumentMoniker": "Modulo_Inicio\\Buscar.aspx",
+              "ToolTip": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Modulo_Inicio\\Buscar.aspx",
+              "RelativeToolTip": "Modulo_Inicio\\Buscar.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-08-27T22:20:47.53Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Buscar2.aspx",
+              "DocumentMoniker": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Modulo_Inicio\\Buscar2.aspx",
+              "RelativeDocumentMoniker": "Modulo_Inicio\\Buscar2.aspx",
+              "ToolTip": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Modulo_Inicio\\Buscar2.aspx",
+              "RelativeToolTip": "Modulo_Inicio\\Buscar2.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-08-27T22:20:26.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Usuarios.aspx",
+              "DocumentMoniker": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Modulo_Inicio\\Usuarios.aspx",
+              "RelativeDocumentMoniker": "Modulo_Inicio\\Usuarios.aspx",
+              "ToolTip": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Modulo_Inicio\\Usuarios.aspx",
+              "RelativeToolTip": "Modulo_Inicio\\Usuarios.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-08-27T22:19:48.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Otros.aspx",
+              "DocumentMoniker": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Modulo_Inicio\\Otros.aspx",
+              "RelativeDocumentMoniker": "Modulo_Inicio\\Otros.aspx",
+              "ToolTip": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Modulo_Inicio\\Otros.aspx",
+              "RelativeToolTip": "Modulo_Inicio\\Otros.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-08-27T22:19:22.549Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Lista_Editar.aspx",
+              "DocumentMoniker": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Modulo_Inicio\\Lista_Editar.aspx",
+              "RelativeDocumentMoniker": "Modulo_Inicio\\Lista_Editar.aspx",
+              "ToolTip": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Modulo_Inicio\\Lista_Editar.aspx",
+              "RelativeToolTip": "Modulo_Inicio\\Lista_Editar.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-08-27T22:17:54.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Default.aspx",
+              "RelativeDocumentMoniker": "Default.aspx",
+              "ToolTip": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Default.aspx",
+              "RelativeToolTip": "Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-08-27T20:46:54.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "estilos.css",
+              "DocumentMoniker": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\estilos.css",
+              "RelativeDocumentMoniker": "estilos.css",
+              "ToolTip": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\estilos.css",
+              "RelativeToolTip": "estilos.css",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-27T22:21:18.745Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ListaVer.aspx",
+              "DocumentMoniker": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Modulo_Inicio\\ListaVer.aspx",
+              "RelativeDocumentMoniker": "Modulo_Inicio\\ListaVer.aspx",
+              "ToolTip": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Modulo_Inicio\\ListaVer.aspx",
+              "RelativeToolTip": "Modulo_Inicio\\ListaVer.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-08-27T22:16:46.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Lista_Ver.aspx",
+              "DocumentMoniker": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Modulo_Inicio\\Lista_Ver.aspx",
+              "RelativeDocumentMoniker": "Modulo_Inicio\\Lista_Ver.aspx",
+              "ToolTip": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Modulo_Inicio\\Lista_Ver.aspx",
+              "RelativeToolTip": "Modulo_Inicio\\Lista_Ver.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-08-27T22:15:58.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Lista.aspx",
+              "DocumentMoniker": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Modulo_Inicio\\Lista.aspx",
+              "RelativeDocumentMoniker": "Modulo_Inicio\\Lista.aspx",
+              "ToolTip": "C:\\Users\\marbin.arevalo.GEOMATICAAD\\Documents\\GitHub\\Avestruz.NET\\Modulo_Inicio\\Lista.aspx",
+              "RelativeToolTip": "Modulo_Inicio\\Lista.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-08-27T21:59:26.411Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

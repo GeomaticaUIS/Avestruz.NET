@@ -1,27 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "LaMejorAplicacionDeTodaLaHistoria", ".", "{AECD1223-94E7-438A-B070-9B82612009AB}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
 		Debug.AspNetCompiler.VirtualPath = "/SesionVer-ProyectoGeomatica"
-		Debug.AspNetCompiler.PhysicalPath = "..\LaMejorAplicacionDeTodaLaHistoria\"
+		Debug.AspNetCompiler.PhysicalPath = "..\Avestruz.NET\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\SesionVer-ProyectoGeomatica\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/SesionVer-ProyectoGeomatica"
-		Release.AspNetCompiler.PhysicalPath = "..\LaMejorAplicacionDeTodaLaHistoria\"
+		Release.AspNetCompiler.PhysicalPath = "..\Avestruz.NET\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\SesionVer-ProyectoGeomatica\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "50169"
-		SlnRelativePath = "..\LaMejorAplicacionDeTodaLaHistoria\"
+		SlnRelativePath = "..\Avestruz.NET\"
 	EndProjectSection
 EndProject
 Global
@@ -34,5 +34,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C65D130-E11F-4CEA-AF93-D16CC49695A9}
 	EndGlobalSection
 EndGlobal

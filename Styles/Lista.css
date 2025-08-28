@@ -5,7 +5,7 @@
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Roboto", Arial;
+  font-family: "Roboto";
   font-size: 16px;
   padding: 3px;
   width: 60%;
@@ -23,7 +23,7 @@
     background: #FFFFFF;
     color: #333;
     width: 100%;
-    font-family: "Roboto",Arial, Helvetica, sans-serif,'Trebuchet MS';
+    font-family: "Roboto";
     transition: all 0.3s ease;
 }
 .contenedor .opcion:hover{

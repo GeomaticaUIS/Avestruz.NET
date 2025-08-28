@@ -54,7 +54,6 @@
     font-size: 20px;
     font-weight: 500;
     display: block;
-    font-family: "Roboto", Arial;
     font-weight:bold;
     background-color: #4b6c9e;
 	background: #303f9f;
@@ -85,7 +84,6 @@
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Roboto", Arial;
   font-size: 16px;
   padding: 15px;
   width: 100%;

@@ -6,7 +6,7 @@
 
 body {
   background: #f2f2f2;
-  font-family: "Roboto", Arial;
+  font-family: "Roboto";
   border-top: 30px solid #303F9F;
 }
 
@@ -149,7 +149,7 @@ body {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Roboto", Arial;
+  font-family: "Roboto";
   font-size: 16px;
   padding: 15px;
   width: 100%;

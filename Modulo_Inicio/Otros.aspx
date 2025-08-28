@@ -1,33 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menus/Menu_Inicial.master" AutoEventWireup="true" CodeFile="Otros.aspx.cs" Inherits="Otros" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css" />
     <script type="text/javascript" defer="defer" src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-    <style type="text/css">
-        .style1
-        {
-            height: 40px;
-        }
-        .style2
-        {
-            height: 40px;
-            width: 74px;
-        }
-        h1{
-            font-size: 36px;
-            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-weight: 500;
-            line-height: 1.1;
-            color: inherit;
-            margin: .67em 0;
-        }
-    </style>
+  
     <link href="../Styles/Lista.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div align= "center">
