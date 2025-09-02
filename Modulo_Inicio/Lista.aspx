@@ -22,7 +22,7 @@
                         </svg>
                         Gestión de Proyectos
                     </h1>
-                    <p class="main-subtitle">Administra y supervisa todos tus proyectos activos</p>
+                    <p class="main-subtitle">Administre y supervise todos tus proyectos</p>
                 </div>
             </div>
             <!-- Toolbar de Acciones Centrado -->
@@ -34,7 +34,7 @@
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             <circle cx="11" cy="11" r="2" fill="currentColor" opacity="0.2" />
                         </svg>
-                        <asp:TextBox ID="Txt_Buscar" placeholder="Buscar por nombre o registro VIE..."
+                        <asp:TextBox ID="Txt_Buscar" placeholder="Buscar por nombre..."
                             class="search-input" runat="server"></asp:TextBox>
                     </div>
                     <asp:Button ID="Btn_Buscar" class="btn btn-search" runat="server"
@@ -176,15 +176,6 @@
         </main>
         <!-- Paginación -->
         <footer class="pagination-footer">
-            <div class="pagination-info">
-                <span class="results-count">
-                    <svg class="info-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Mostrando hasta 12 proyectos por página
-                </span>
-            </div>
             <asp:DataPager ID="Paginado" runat="server" PagedControlID="ListView1" PageSize="12">
                 <Fields>
                     <asp:NextPreviousPagerField ButtonType="Link"
