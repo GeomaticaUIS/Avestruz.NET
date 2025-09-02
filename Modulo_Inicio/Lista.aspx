@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menus/Menu_Inicial.master" AutoEventWireup="true" CodeFile="Lista.aspx.cs" Inherits="Lista" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../Styles/Lista.css" rel="stylesheet" />
@@ -7,11 +6,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="projects-app">
         <!-- Header Principal -->
-        <!-- Header Principal Simplificado -->
         <header class="app-header">
             <div class="header-main">
                 <div class="title-section">
@@ -28,7 +25,6 @@
                     <p class="main-subtitle">Administra y supervisa todos tus proyectos activos</p>
                 </div>
             </div>
-
             <!-- Toolbar de Acciones Centrado -->
             <div class="toolbar">
                 <div class="search-section">
@@ -43,7 +39,6 @@
                     </div>
                     <asp:Button ID="Btn_Buscar" class="btn btn-search" runat="server"
                         Text="Buscar" OnClick="Btn_Mostrar_Click" />
-
                     <asp:LinkButton ID="btnExportar" class="btn btn-export" runat="server"
                         OnClick="Exportar_Click">
                 <span class="btn-content">
@@ -59,13 +54,10 @@
                 </div>
             </div>
         </header>
-
-
         <!-- Grid de Proyectos -->
         <main class="projects-main">
             <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id_Proyecto"
                 DataSourceID="SqlDataSource1">
-
                 <EmptyDataTemplate>
                     <div class="empty-container">
                         <div class="empty-illustration">
@@ -88,17 +80,14 @@
                         </button>
                     </div>
                 </EmptyDataTemplate>
-
                 <ItemTemplate>
                     <article class="project-card">
                         <asp:Label ID="Id_ProyectoLabel" runat="server"
                             Text='<%# Eval("Id_Proyecto") %>' Visible="False" />
-
                         <div class="card-body">
                             <h3 class="project-title">
                                 <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
                             </h3>
-
                             <div class="project-details">
                                 <div class="detail-row">
                                     <div class="detail-icon">
@@ -114,7 +103,6 @@
                                         <span class="detail-value"><%# Eval("Id_Proyecto") %></span>
                                     </div>
                                 </div>
-
                                 <div class="detail-row">
                                     <div class="detail-icon">
                                         <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
@@ -131,7 +119,6 @@
                                         </span>
                                     </div>
                                 </div>
-
                                 <div class="detail-row">
                                     <div class="detail-icon">
                                         <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
@@ -148,8 +135,7 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Cambio de Button a LinkButton para permitir HTML -->
+                        <!-- Acciones de tarjeta -->
                         <div class="card-actions">
                             <asp:LinkButton ID="VerProyecto" class="btn btn-secondary btn-view"
                                 runat="server" OnClick="VerProyecto_Click">
@@ -163,7 +149,6 @@
                                     Ver Detalles
                                 </span>
                             </asp:LinkButton>
-
                             <asp:LinkButton ID="EditarProyecto" class="btn btn-primary btn-edit"
                                 runat="server" OnClick="EditarProyecto_Click">
                                 <span class="btn-content">
@@ -176,12 +161,10 @@
                                 </span>
                             </asp:LinkButton>
                         </div>
-
                         <asp:Label ID="Fecha_Registro_VIELabel" runat="server"
                             Text='<%# Eval("Fecha_Registro_VIE") %>' Visible="False" />
                     </article>
                 </ItemTemplate>
-
                 <LayoutTemplate>
                     <div class="projects-grid">
                         <div class="grid-container">
@@ -191,7 +174,6 @@
                 </LayoutTemplate>
             </asp:ListView>
         </main>
-
         <!-- Paginación -->
         <footer class="pagination-footer">
             <div class="pagination-info">
@@ -203,7 +185,6 @@
                     Mostrando hasta 12 proyectos por página
                 </span>
             </div>
-
             <asp:DataPager ID="Paginado" runat="server" PagedControlID="ListView1" PageSize="12">
                 <Fields>
                     <asp:NextPreviousPagerField ButtonType="Link"
@@ -214,11 +195,9 @@
                         PreviousPageText="‹ Anterior"
                         RenderDisabledButtonsAsLabels="true"
                         ButtonCssClass="pagination-btn" />
-
                     <asp:NumericPagerField ButtonCount="5"
                         CurrentPageLabelCssClass="pagination-current"
                         NumericButtonCssClass="pagination-number" />
-
                     <asp:NextPreviousPagerField ButtonType="Link"
                         LastPageText="Última ››"
                         NextPageText="Siguiente ›"
@@ -229,22 +208,45 @@
                 </Fields>
             </asp:DataPager>
         </footer>
-
         <asp:SqlDataSource ID="SqlDataSource1" runat="server"
             ConnectionString="<%$ ConnectionStrings:PROYECTOSGEOMATICAConnectionString %>"
             SelectCommand="SELECT [Id_Proyecto], [Nombre], [Registro_VIE], [Fecha_Registro_VIE] FROM [Proyectos] ORDER BY [Id_Proyecto] DESC"></asp:SqlDataSource>
     </div>
 
-    <!-- JavaScript Mejorado -->
+    <!-- JavaScript Optimizado para Scroll Reveal -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Inicializar todas las funcionalidades
+            initializeScrollReveal();
             initializeScrollableTitles();
             initializeButtonStates();
-            initializeLazyLoading();
             initializeSearchEnhancements();
-            initializeStatsAnimation();
         });
 
+        // SCROLL REVEAL - Funcionalidad principal
+        function initializeScrollReveal() {
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -30px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observar todas las tarjetas
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                observer.observe(card);
+            });
+        }
+
+        // Títulos con scroll interno
         function initializeScrollableTitles() {
             const titles = document.querySelectorAll('.project-title');
             titles.forEach(title => {
@@ -252,7 +254,6 @@
                     title.setAttribute('data-scrollable', 'true');
                     title.setAttribute('title', title.textContent);
                 }
-
                 title.addEventListener('wheel', function (e) {
                     if (this.scrollHeight > this.clientHeight) {
                         e.preventDefault();
@@ -262,6 +263,7 @@
             });
         }
 
+        // Estados de botones
         function initializeButtonStates() {
             const buttons = document.querySelectorAll('.btn');
             buttons.forEach(button => {
@@ -270,7 +272,6 @@
                         this.classList.add('loading');
                         this.style.opacity = '0.7';
                         this.style.pointerEvents = 'none';
-
                         setTimeout(() => {
                             this.classList.remove('loading');
                             this.style.opacity = '1';
@@ -281,32 +282,9 @@
             });
         }
 
-        function initializeLazyLoading() {
-            const cards = document.querySelectorAll('.project-card');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '50px'
-            });
-
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s`;
-                observer.observe(card);
-            });
-        }
-
+        // Mejoras de búsqueda
         function initializeSearchEnhancements() {
             const searchInput = document.querySelector('.search-input');
-
             if (searchInput) {
                 searchInput.addEventListener('keypress', function (e) {
                     if (e.key === 'Enter') {
@@ -315,28 +293,6 @@
                     }
                 });
             }
-        }
-
-        function initializeStatsAnimation() {
-            const statNumbers = document.querySelectorAll('.stat-number');
-
-            statNumbers.forEach(stat => {
-                const finalValue = parseInt(stat.textContent);
-                stat.textContent = '0';
-
-                const increment = finalValue / 30;
-                let current = 0;
-
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= finalValue) {
-                        stat.textContent = finalValue;
-                        clearInterval(timer);
-                    } else {
-                        stat.textContent = Math.floor(current);
-                    }
-                }, 50);
-            });
         }
     </script>
 </asp:Content>
