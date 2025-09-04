@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menus/Menu_Inicial.master" AutoEventWireup="true" CodeFile="Lista.aspx.cs" Inherits="Lista" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../Styles/Lista.css" rel="stylesheet" />
@@ -8,31 +9,27 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="projects-app">
-        <!-- Header Principal -->
         <header class="app-header">
             <div class="header-main">
                 <div class="title-section">
                     <h1 class="main-title">
-                        <svg class="title-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v-2a2 2 0 012-2h14a2 2 0 012 2v2M3 7l9 6 9-6" />
-                            <circle cx="8" cy="13" r="1.5" fill="currentColor" opacity="0.6" />
-                            <circle cx="12" cy="15" r="1" fill="currentColor" opacity="0.8" />
-                            <circle cx="16" cy="13" r="1.2" fill="currentColor" opacity="0.7" />
+                        <svg class="title-icon" width="24" height="24" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7" />
+                            <rect x="14" y="3" width="7" height="7" />
+                            <rect x="14" y="14" width="7" height="7" />
+                            <rect x="3" y="14" width="7" height="7" />
                         </svg>
                         Gestión de Proyectos
                     </h1>
                     <p class="main-subtitle">Administre y supervise todos tus proyectos</p>
                 </div>
             </div>
-            <!-- Toolbar de Acciones Centrado -->
             <div class="toolbar">
                 <div class="search-section">
                     <div class="search-box">
-                        <svg class="search-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            <circle cx="11" cy="11" r="2" fill="currentColor" opacity="0.2" />
+                        <svg class="search-icon" width="20" height="20" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="M21 21l-4.35-4.35" />
                         </svg>
                         <asp:TextBox ID="Txt_Buscar" placeholder="Buscar por nombre..."
                             class="search-input" runat="server"></asp:TextBox>
@@ -41,40 +38,40 @@
                         Text="Buscar" OnClick="Btn_Mostrar_Click" />
                     <asp:LinkButton ID="btnExportar" class="btn btn-export" runat="server"
                         OnClick="Exportar_Click">
-                <span class="btn-content">
-                    <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                              d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                              d="M8 7H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3" opacity="0.5"/>
-                    </svg>
-                    Exportar Reporte
-                </span>
+                    <span class="btn-content">
+                        <svg class="btn-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Exportar Reporte
+                    </span>
                     </asp:LinkButton>
                 </div>
             </div>
         </header>
-        <!-- Grid de Proyectos -->
         <main class="projects-main">
             <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id_Proyecto"
                 DataSourceID="SqlDataSource1">
                 <EmptyDataTemplate>
                     <div class="empty-container">
                         <div class="empty-illustration">
-                            <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                                <circle cx="12" cy="12" r="2" fill="currentColor" opacity="0.3" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                                    d="M8 8l8 8M16 8l-8 8" opacity="0.4" />
+                            <svg width="64" height="64" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                                <line x1="12" y1="14" x2="12" y2="18" />
+                                <line x1="10" y1="16" x2="14" y2="16" />
                             </svg>
                         </div>
                         <h3 class="empty-title">No hay proyectos disponibles</h3>
                         <p class="empty-description">No se encontraron proyectos que coincidan con tu búsqueda actual.</p>
                         <button class="btn btn-primary empty-action">
-                            <svg class="btn-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            <svg class="btn-icon" width="18" height="18" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="12" y1="8" x2="12" y2="16" />
+                                <line x1="8" y1="12" x2="16" y2="12" />
                             </svg>
                             Crear Nuevo Proyecto
                         </button>
@@ -91,11 +88,10 @@
                             <div class="project-details">
                                 <div class="detail-row">
                                     <div class="detail-icon">
-                                        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
-                                            <circle cx="9" cy="9" r="1" fill="currentColor" />
-                                            <circle cx="15" cy="15" r="1" fill="currentColor" />
+                                        <svg width="16" height="16" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2">
+                                            <path d="M12 2L2 7L12 12L22 7L12 2Z" />
+                                            <path d="M2 17L12 22L22 17" />
+                                            <path d="M2 12L12 17L22 12" />
                                         </svg>
                                     </div>
                                     <div class="detail-content">
@@ -105,11 +101,12 @@
                                 </div>
                                 <div class="detail-row">
                                     <div class="detail-icon">
-                                        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M16 5v4a1 1 0 001 1h4" opacity="0.6" />
+                                        <svg width="16" height="16" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                            <polyline points="14,2 14,8 20,8" />
+                                            <line x1="16" y1="13" x2="8" y2="13" />
+                                            <line x1="16" y1="17" x2="8" y2="17" />
+                                            <polyline points="10,9 9,9 8,9" />
                                         </svg>
                                     </div>
                                     <div class="detail-content">
@@ -121,11 +118,11 @@
                                 </div>
                                 <div class="detail-row">
                                     <div class="detail-icon">
-                                        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                            <circle cx="9" cy="13" r="1" fill="currentColor" />
-                                            <circle cx="15" cy="17" r="1" fill="currentColor" />
+                                        <svg width="16" height="16" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                            <line x1="16" y1="2" x2="16" y2="6" />
+                                            <line x1="8" y1="2" x2="8" y2="6" />
+                                            <line x1="3" y1="10" x2="21" y2="10" />
                                         </svg>
                                     </div>
                                     <div class="detail-content">
@@ -135,30 +132,26 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Acciones de tarjeta -->
                         <div class="card-actions">
                             <asp:LinkButton ID="VerProyecto" class="btn btn-secondary btn-view"
                                 runat="server" OnClick="VerProyecto_Click">
-                                <span class="btn-content">
-                                    <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                                    </svg>
-                                    Ver Detalles
-                                </span>
+                            <span class="btn-content">
+                                <svg class="btn-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                                Ver Detalles
+                            </span>
                             </asp:LinkButton>
                             <asp:LinkButton ID="EditarProyecto" class="btn btn-primary btn-edit"
                                 runat="server" OnClick="EditarProyecto_Click">
-                                <span class="btn-content">
-                                    <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                              d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-                                        <circle cx="17" cy="7" r="1" fill="currentColor"/>
-                                    </svg>
-                                    Editar
-                                </span>
+                            <span class="btn-content">
+                                <svg class="btn-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                </svg>
+                                Editar
+                            </span>
                             </asp:LinkButton>
                         </div>
                         <asp:Label ID="Fecha_Registro_VIELabel" runat="server"
@@ -174,7 +167,6 @@
                 </LayoutTemplate>
             </asp:ListView>
         </main>
-        <!-- Paginación -->
         <footer class="pagination-footer">
             <asp:DataPager ID="Paginado" runat="server" PagedControlID="ListView1" PageSize="12">
                 <Fields>
@@ -203,6 +195,8 @@
             ConnectionString="<%$ ConnectionStrings:PROYECTOSGEOMATICAConnectionString %>"
             SelectCommand="SELECT [Id_Proyecto], [Nombre], [Registro_VIE], [Fecha_Registro_VIE] FROM [Proyectos] ORDER BY [Id_Proyecto] DESC"></asp:SqlDataSource>
     </div>
+
+
 
     <!-- JavaScript Optimizado para Scroll Reveal -->
     <script>
