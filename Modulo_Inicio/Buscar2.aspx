@@ -10,80 +10,57 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="projects-app">
-        <!-- Header Principal -->
         <header class="app-header">
             <div class="header-main">
                 <div class="title-section">
                     <h1 class="main-title">
-                        <svg class="title-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            <circle cx="11" cy="11" r="2" fill="currentColor" opacity="0.3" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" opacity="0.4"/>
+                        <svg class="title-icon" width="24" height="24" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="M21 21l-4.35-4.35" />
                         </svg>
-                        Proyectos de Investigación
+                        Búsqueda de Proyectos
                     </h1>
-                    <p class="main-subtitle">Busque y administre proyectos por nombre</p>
+                    <p class="main-subtitle">encuentre proyectos por nombre, contrato o entidad</p>
                 </div>
             </div>
-
-            <!-- Toolbar de Búsqueda -->
             <div class="toolbar">
                 <div class="search-section">
                     <div class="search-box">
-                        <svg class="search-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            <circle cx="11" cy="11" r="2" fill="currentColor" opacity="0.2" />
+                        <svg class="search-icon" width="20" height="20" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="M21 21l-4.35-4.35" />
                         </svg>
-                        <asp:TextBox ID="Txt_Buscar" placeholder="Buscar por nombre, registro VIE o entidad..."
+                        <asp:TextBox ID="Txt_Buscar" placeholder="Buscar por nombre..."
                             class="search-input" runat="server" OnTextChanged="Txt_Buscar_TextChanged"></asp:TextBox>
                     </div>
                     <asp:Button ID="Btn_Buscar" class="btn btn-search" runat="server"
                         Text="Buscar" OnClick="Btn_Mostrar_Click" />
                 </div>
             </div>
-
-            <!-- Badge de Búsqueda -->
-            <div style="text-align: center; margin-top: var(--space-4);">
-                <asp:Label ID="txtBusqueda" runat="server" Text="Label" 
-                    class="badge" style="background: var(--primary-100); color: var(--primary-700); 
-                    padding: var(--space-2) var(--space-4); border-radius: var(--radius-lg); 
-                    font-size: var(--text-sm); font-weight: 500;"></asp:Label>
-            </div>
+            <!-- Badge independiente -->
+            <asp:Label ID="txtBusqueda" runat="server" Text="Label"
+                class="detail-label" Style="display: block; text-align: center; margin: 16px 0; font-size: 12px; color: #1e40af; background: #f0f9ff; padding: 8px 16px; border-radius: 8px; max-width: fit-content; margin-left: auto; margin-right: auto;"></asp:Label>
         </header>
 
-        <!-- Grid de Proyectos -->
         <main class="projects-main">
             <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id_Proyecto" DataSourceID="SqlDataSource1">
                 <EmptyDataTemplate>
                     <div class="empty-container">
                         <div class="empty-illustration">
-                            <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" opacity="0.3" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                                    d="M8 8l8 8M16 8l-8 8" opacity="0.4" />
+                            <svg width="64" height="64" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2">
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="M21 21l-4.35-4.35" />
                             </svg>
                         </div>
                         <h3 class="empty-title">No se encontraron proyectos</h3>
                         <p class="empty-description">No hay proyectos que coincidan con tu búsqueda actual. Intenta con otros términos.</p>
-                        <div style="margin-top: var(--space-4);">
-                            <button onclick="document.querySelector('.search-input').focus()" class="btn btn-secondary">
-                                <svg class="btn-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                </svg>
-                                Nueva Búsqueda
-                            </button>
-                        </div>
                     </div>
                 </EmptyDataTemplate>
-
+                
                 <ItemTemplate>
                     <article class="project-card">
+                        <asp:Label ID="Id_ProyectoLabel" runat="server"
+                            Text='<%# Eval("Id_Proyecto") %>' Visible="False" />
                         <div class="card-body">
                             <h3 class="project-title">
                                 <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
@@ -91,27 +68,25 @@
                             <div class="project-details">
                                 <div class="detail-row">
                                     <div class="detail-icon">
-                                        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
-                                            <circle cx="9" cy="9" r="1" fill="currentColor" />
-                                            <circle cx="15" cy="15" r="1" fill="currentColor" />
+                                        <svg width="16" height="16" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2">
+                                            <path d="M12 2L2 7L12 12L22 7L12 2Z" />
+                                            <path d="M2 17L12 22L22 17" />
+                                            <path d="M2 12L12 17L22 12" />
                                         </svg>
                                     </div>
                                     <div class="detail-content">
                                         <span class="detail-label">ID Proyecto</span>
-                                        <span class="detail-value">
-                                            <asp:Label ID="Id_ProyectoLabel" runat="server" Text='<%# Eval("Id_Proyecto") %>' />
-                                        </span>
+                                        <span class="detail-value"><%# Eval("Id_Proyecto") %></span>
                                     </div>
                                 </div>
                                 <div class="detail-row">
                                     <div class="detail-icon">
-                                        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M16 5v4a1 1 0 001 1h4" opacity="0.6" />
+                                        <svg width="16" height="16" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                            <polyline points="14,2 14,8 20,8" />
+                                            <line x1="16" y1="13" x2="8" y2="13" />
+                                            <line x1="16" y1="17" x2="8" y2="17" />
+                                            <polyline points="10,9 9,9 8,9" />
                                         </svg>
                                     </div>
                                     <div class="detail-content">
@@ -123,95 +98,47 @@
                                 </div>
                                 <div class="detail-row">
                                     <div class="detail-icon">
-                                        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                            <circle cx="12" cy="8" r="1" fill="currentColor" opacity="0.6" />
+                                        <svg width="16" height="16" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                            <line x1="16" y1="2" x2="16" y2="6" />
+                                            <line x1="8" y1="2" x2="8" y2="6" />
+                                            <line x1="3" y1="10" x2="21" y2="10" />
                                         </svg>
                                     </div>
                                     <div class="detail-content">
-                                        <span class="detail-label">Estado</span>
-                                        <span class="detail-value">Activo</span>
+                                        <span class="detail-label">Fecha de Registro</span>
+                                        <span class="detail-value"><%# Eval("Fecha_Registro_VIE", "{0:dd/MM/yyyy}") %></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Acciones de tarjeta -->
                         <div class="card-actions">
-                            <asp:Button ID="VerProyecto" class="btn btn-secondary" 
-                                runat="server" Text="Ver Detalles" OnClick="VerProyecto_Click" />
-                            <asp:Button ID="EditarProyecto" class="btn btn-primary" 
-                                runat="server" Text="Editar" OnClick="EditarProyecto_Click" />
+                            <asp:LinkButton ID="VerProyecto" class="btn btn-secondary btn-view"
+                                runat="server" OnClick="VerProyecto_Click">
+                                <span class="btn-content">
+                                    <svg class="btn-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                    Ver Detalles
+                                </span>
+                            </asp:LinkButton>
+                            <asp:LinkButton ID="EditarProyecto" class="btn btn-primary btn-edit"
+                                runat="server" OnClick="EditarProyecto_Click">
+                                <span class="btn-content">
+                                    <svg class="btn-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                    </svg>
+                                    Editar
+                                </span>
+                            </asp:LinkButton>
                         </div>
+                        <asp:Label ID="Fecha_Registro_VIELabel" runat="server"
+                            Text='<%# Eval("Fecha_Registro_VIE") %>' Visible="False" />
                     </article>
                 </ItemTemplate>
-
-                <AlternatingItemTemplate>
-                    <article class="project-card">
-                        <div class="card-body">
-                            <h3 class="project-title">
-                                <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
-                            </h3>
-                            <div class="project-details">
-                                <div class="detail-row">
-                                    <div class="detail-icon">
-                                        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
-                                            <circle cx="9" cy="9" r="1" fill="currentColor" />
-                                            <circle cx="15" cy="15" r="1" fill="currentColor" />
-                                        </svg>
-                                    </div>
-                                    <div class="detail-content">
-                                        <span class="detail-label">ID Proyecto</span>
-                                        <span class="detail-value">
-                                            <asp:Label ID="Id_ProyectoLabel" runat="server" Text='<%# Eval("Id_Proyecto") %>' />
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-icon">
-                                        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M16 5v4a1 1 0 001 1h4" opacity="0.6" />
-                                        </svg>
-                                    </div>
-                                    <div class="detail-content">
-                                        <span class="detail-label">Registro VIE</span>
-                                        <span class="detail-value">
-                                            <asp:Label ID="Registro_VIELabel" runat="server" Text='<%# Eval("Registro_VIE") %>' />
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-icon">
-                                        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                            <circle cx="12" cy="8" r="1" fill="currentColor" opacity="0.6" />
-                                        </svg>
-                                    </div>
-                                    <div class="detail-content">
-                                        <span class="detail-label">Estado</span>
-                                        <span class="detail-value">Activo</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Acciones de tarjeta -->
-                        <div class="card-actions">
-                            <asp:Button ID="VerProyecto" class="btn btn-secondary" 
-                                runat="server" Text="Ver Detalles" OnClick="VerProyecto_Click" />
-                            <asp:Button ID="EditarProyecto" class="btn btn-primary" 
-                                runat="server" Text="Editar" OnClick="EditarProyecto_Click" />
-                        </div>
-                    </article>
-                </AlternatingItemTemplate>
-
+                
                 <LayoutTemplate>
                     <div class="projects-grid">
                         <div class="grid-container">
@@ -221,17 +148,7 @@
                 </LayoutTemplate>
             </asp:ListView>
         </main>
-
-        <!-- Paginación -->
         <footer class="pagination-footer">
-            <div class="pagination-info">
-                <svg class="info-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span class="results-count">Resultados de búsqueda</span>
-            </div>
-            
             <asp:DataPager ID="Paginado" runat="server" PagedControlID="ListView1" PageSize="12">
                 <Fields>
                     <asp:NextPreviousPagerField ButtonType="Link"
@@ -255,11 +172,9 @@
                 </Fields>
             </asp:DataPager>
         </footer>
-
-        <!-- SQL DataSource original mantenido -->
         <asp:SqlDataSource ID="SqlDataSource1" runat="server"
             ConnectionString="<%$ ConnectionStrings:PROYECTOSGEOMATICAConnectionString %>"
-            SelectCommand="SELECT Proyectos.Id_Proyecto, Proyectos.Nombre, Proyectos.Registro_VIE 
+            SelectCommand="SELECT Proyectos.Id_Proyecto, Proyectos.Nombre, Proyectos.Registro_VIE, Proyectos.Fecha_Registro_VIE
                        FROM Proyectos full outer join Contrato_Convenio 
                        ON Proyectos.Id_Proyecto = Contrato_Convenio.Id_Proyecto full outer join Entidad_Contratante 
                        ON Contrato_Convenio.Entidad_Contratante = Entidad_Contratante.Id_Entidad_Contratante 
@@ -271,15 +186,17 @@
         </asp:SqlDataSource>
     </div>
 
-    <!-- JavaScript para funcionalidades interactivas -->
+    <!-- JavaScript Optimizado para Scroll Reveal -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Inicializar todas las funcionalidades
             initializeScrollReveal();
-            initializeSearchEnhancements();
+            initializeScrollableTitles();
             initializeButtonStates();
+            initializeSearchEnhancements();
         });
 
-        // SCROLL REVEAL para las tarjetas
+        // SCROLL REVEAL - Funcionalidad principal
         function initializeScrollReveal() {
             const observerOptions = {
                 threshold: 0.15,
@@ -295,29 +212,29 @@
                 });
             }, observerOptions);
 
+            // Observar todas las tarjetas
             const projectCards = document.querySelectorAll('.project-card');
             projectCards.forEach(card => {
                 observer.observe(card);
             });
         }
 
-        // Mejoras de búsqueda
-        function initializeSearchEnhancements() {
-            const searchInput = document.querySelector('.search-input');
-            if (searchInput) {
-                // Enter para buscar
-                searchInput.addEventListener('keypress', function (e) {
-                    if (e.key === 'Enter') {
+        // Títulos con scroll interno
+        function initializeScrollableTitles() {
+            const titles = document.querySelectorAll('.project-title');
+            titles.forEach(title => {
+                if (title.scrollHeight > title.clientHeight) {
+                    title.setAttribute('data-scrollable', 'true');
+                    title.setAttribute('title', title.textContent);
+                }
+
+                title.addEventListener('wheel', function (e) {
+                    if (this.scrollHeight > this.clientHeight) {
                         e.preventDefault();
-                        document.querySelector('.btn-search')?.click();
+                        this.scrollTop += e.deltaY * 0.3;
                     }
                 });
-
-                // Focus automático al cargar si no hay resultados
-                if (document.querySelector('.empty-container')) {
-                    setTimeout(() => searchInput.focus(), 500);
-                }
-            }
+            });
         }
 
         // Estados de botones
@@ -328,15 +245,29 @@
                     if (!this.classList.contains('loading')) {
                         this.classList.add('loading');
                         this.style.opacity = '0.7';
+                        this.style.pointerEvents = 'none';
 
-                        // Restaurar después de 2 segundos
                         setTimeout(() => {
                             this.classList.remove('loading');
                             this.style.opacity = '1';
+                            this.style.pointerEvents = 'auto';
                         }, 2000);
                     }
                 });
             });
+        }
+
+        // Mejoras de búsqueda
+        function initializeSearchEnhancements() {
+            const searchInput = document.querySelector('.search-input');
+            if (searchInput) {
+                searchInput.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        document.querySelector('.btn-search')?.click();
+                    }
+                });
+            }
         }
     </script>
 </asp:Content>

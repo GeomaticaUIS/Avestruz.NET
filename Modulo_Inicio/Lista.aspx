@@ -21,7 +21,7 @@
                         </svg>
                         Gestión de Proyectos
                     </h1>
-                    <p class="main-subtitle">Administre y supervise todos tus proyectos</p>
+                    <p class="main-subtitle">administre, busque y supervise todos los proyectos</p>
                 </div>
             </div>
             <div class="toolbar">
