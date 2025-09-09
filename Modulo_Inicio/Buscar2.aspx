@@ -43,7 +43,8 @@
         </header>
 
         <main class="projects-main">
-            <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id_Proyecto" DataSourceID="SqlDataSource1">
+            <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id_Proyecto"
+                DataSourceID="SqlDataSource1" OnDataBound="ListView1_DataBound">
                 <EmptyDataTemplate>
                     <div class="empty-container">
                         <div class="empty-illustration">
@@ -56,7 +57,7 @@
                         <p class="empty-description">No hay proyectos que coincidan con tu búsqueda actual. Intenta con otros términos.</p>
                     </div>
                 </EmptyDataTemplate>
-                
+
                 <ItemTemplate>
                     <article class="project-card">
                         <asp:Label ID="Id_ProyectoLabel" runat="server"
@@ -138,7 +139,7 @@
                             Text='<%# Eval("Fecha_Registro_VIE") %>' Visible="False" />
                     </article>
                 </ItemTemplate>
-                
+
                 <LayoutTemplate>
                     <div class="projects-grid">
                         <div class="grid-container">

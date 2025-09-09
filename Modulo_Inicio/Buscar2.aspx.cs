@@ -38,10 +38,14 @@ public partial class Modulo_Inicio_Buscar2 : System.Web.UI.Page
         Session["Palabra_Buscar"] = Txt_Buscar.Text;
         Response.Redirect("~/Modulo_Inicio/Buscar2.aspx");
     }
-
     protected void Txt_Buscar_TextChanged(object sender, EventArgs e)
     {
 
     }
-	
+    protected void ListView1_DataBound(object sender, EventArgs e)
+    {
+        // Ocultar paginación si no hay datos
+        Paginado.Visible = ListView1.Items.Count > 0;
+    }
+
 }
