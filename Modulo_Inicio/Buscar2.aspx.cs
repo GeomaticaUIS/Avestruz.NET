@@ -17,11 +17,9 @@ public partial class Modulo_Inicio_Buscar2 : System.Web.UI.Page
     }
     protected void VerProyecto_Click(object sender, EventArgs e)
     {
-        Button boton2 = ((Button)sender);
+        LinkButton boton2 = ((LinkButton)sender);
         Label id_proy = ((Label)boton2.Parent.FindControl("Id_ProyectoLabel"));
-
         int idproy = Convert.ToInt32(id_proy.Text);
-
         Response.Redirect("~/Modulo_Ver/Consulta.aspx?ID_Proy=" + id_proy.Text);
     }
     protected void EditarProyecto_Click(object sender, EventArgs e)
