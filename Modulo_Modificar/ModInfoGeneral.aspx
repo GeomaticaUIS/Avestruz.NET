@@ -110,16 +110,22 @@
             </div>
         </div>
         
-        <div class="form-content" style="background: white; padding: var(--space-3); border-radius: var(--radius-lg); box-shadow: var(--shadow-xs); border: 1px solid var(--gray-200); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div class="form-content" style="background: white; padding: var(--space-3); border-radius: var(--radius-lg); box-shadow: var(--shadow-xs); border: 1px solid var(--gray-200); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
             <label style="display: block; font-weight: 600; color: var(--gray-800); margin-bottom: var(--space-2); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.03em; text-align: center; width: 100%;">Nombre del Proyecto *</label>
             <asp:TextBox ID="Txt_Nombre" runat="server" 
-                style="width: 100%; border: 1px solid var(--gray-300); border-radius: var(--radius-lg); padding: var(--space-2) var(--space-3); font-size: var(--text-sm); background: white; transition: all 0.2s ease; font-weight: 500; text-align: center;"
+                style="width: 100%; border: 1px solid var(--gray-300); border-radius: var(--radius-lg); padding: var(--space-2) var(--space-3); font-size: var(--text-sm); background: white; transition: all 0.3s ease; font-weight: 500; text-align: center;"
                 ValidationGroup="Validar_InfoGeneral" Enabled="False" 
-                placeholder="Denominación oficial del proyecto"></asp:TextBox>
+                placeholder="Denominación oficial del proyecto"
+                onblur="this.style.borderColor = this.value ? 'var(--primary-300)' : 'var(--gray-300)';"
+                onfocus="this.style.borderColor='var(--primary-500)'; this.style.boxShadow='0 0 0 3px rgba(59, 130, 246, 0.1)';"
+                onchange="toggleValidationAlert('RequiredFieldValidator1', this.value)"></asp:TextBox>
+            
+            <!-- Alerta dinámica -->
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                 ControlToValidate="Txt_Nombre" ValidationGroup="Validar_InfoGeneral" 
-                style="color: #dc2626; font-weight: 500; font-size: 10px; margin-top: var(--space-1); display: block; background: #fef2f2; padding: var(--space-1); border-radius: 4px; text-align: center; width: 100%;" 
-                Text="⚠ Campo obligatorio"></asp:RequiredFieldValidator>
+                style="position: absolute; bottom: -35px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #fef2f2, #fff); color: #dc2626; font-weight: 600; font-size: 11px; padding: 8px 12px; border-radius: 8px; border: 1px solid #fecaca; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15); opacity: 0; visibility: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; white-space: nowrap; backdrop-filter: blur(8px);" 
+                Text="⚠ Campo obligatorio"
+                onpropertychange="if(this.style.visibility !== 'visible') { this.style.opacity='1'; this.style.visibility='visible'; this.style.transform='translateX(-50%) translateY(-5px)'; } else if(!this.innerHTML) { this.style.opacity='0'; this.style.visibility='hidden'; this.style.transform='translateX(-50%) translateY(0px)'; }"></asp:RequiredFieldValidator>
         </div>
     </div>
 
@@ -144,40 +150,49 @@
         <div class="form-content" style="padding: var(--space-3); border-radius: var(--radius-lg); border: 1px solid var(--gray-200); display: flex; flex-direction: column; align-items: center; justify-content: center;">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); width: 100%; place-items: center;">
                 <!-- Campo: Número VIE -->
-                <div style="background: white; padding: var(--space-3); border-radius: var(--radius-lg); border: 1px solid var(--gray-200); display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
+                <div style="background: white; padding: var(--space-3); border-radius: var(--radius-lg); border: 1px solid var(--gray-200); display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; position: relative;">
                     <label style="display: block; font-weight: 600; color: var(--gray-800); margin-bottom: var(--space-2); font-size: var(--text-xs); text-transform: uppercase; text-align: center; width: 100%;">Número FEX.04 VIE *</label>
                     <asp:TextBox ID="Txt_RegistroVie" runat="server" 
-                        style="width: 100%; border: 1px solid var(--gray-300); border-radius: var(--radius-lg); padding: var(--space-2); font-size: var(--text-sm); text-align: center; font-family: 'SF Mono', monospace; font-weight: 600;"
-                        MaxLength="10" Enabled="False" placeholder="000-000"></asp:TextBox>
-                    <div style="margin-top: var(--space-1); display: flex; flex-direction: column; align-items: center; gap: var(--space-1); width: 100%;">
+                        style="width: 100%; border: 1px solid var(--gray-300); border-radius: var(--radius-lg); padding: var(--space-2); font-size: var(--text-sm); text-align: center; font-family: 'SF Mono', monospace; font-weight: 600; transition: all 0.3s ease;"
+                        MaxLength="10" Enabled="False" placeholder="000-000"
+                        onfocus="this.style.borderColor='var(--primary-500)'; this.style.boxShadow='0 0 0 3px rgba(59, 130, 246, 0.1)';"
+                        onblur="this.style.borderColor = this.value ? 'var(--primary-300)' : 'var(--gray-300)'; this.style.boxShadow='none';"></asp:TextBox>
+                    
+                    <!-- Alertas dinámicas para VIE -->
+                    <div style="position: absolute; bottom: -45px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 4px;">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                             ControlToValidate="Txt_RegistroVie" ValidationGroup="Validar_InfoGeneral" 
-                            style="color: #dc2626; font-size: 10px; font-weight: 500; background: #fef2f2; padding: 2px 4px; border-radius: 4px; text-align: center;" 
+                            style="background: linear-gradient(135deg, #fef2f2, #fff); color: #dc2626; font-weight: 500; font-size: 10px; padding: 6px 10px; border-radius: 6px; border: 1px solid #fecaca; box-shadow: 0 3px 8px rgba(220, 38, 38, 0.12); opacity: 0; visibility: hidden; transition: all 0.3s ease; white-space: nowrap; backdrop-filter: blur(6px);" 
                             Text="⚠ Requerido"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
                             ControlToValidate="Txt_RegistroVie" ValidationExpression="([0-9]|-)*" 
                             ValidationGroup="Validar_InfoGeneral" 
-                            style="color: #dc2626; font-size: 10px; font-weight: 500; background: #fef2f2; padding: 2px 4px; border-radius: 4px; text-align: center;" 
+                            style="background: linear-gradient(135deg, #fef2f2, #fff); color: #dc2626; font-weight: 500; font-size: 10px; padding: 6px 10px; border-radius: 6px; border: 1px solid #fecaca; box-shadow: 0 3px 8px rgba(220, 38, 38, 0.12); opacity: 0; visibility: hidden; transition: all 0.3s ease; white-space: nowrap; backdrop-filter: blur(6px);" 
                             Text="⚠ Solo números"></asp:RegularExpressionValidator>
                     </div>
                 </div>
+                
                 <!-- Campo: Fecha de registro -->
-                <div style="background: white; padding: var(--space-3); border-radius: var(--radius-lg); border: 1px solid var(--gray-200); display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
+                <div style="background: white; padding: var(--space-3); border-radius: var(--radius-lg); border: 1px solid var(--gray-200); display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; position: relative;">
                     <label style="display: block; font-weight: 600; color: var(--gray-800); margin-bottom: var(--space-2); font-size: var(--text-xs); text-transform: uppercase; text-align: center; width: 100%;">Fecha de Registro *</label>
                     <asp:TextBox ID="Txt_fechaVie" runat="server" 
-                        style="width: 100%; border: 1px solid var(--gray-300); border-radius: var(--radius-lg); padding: var(--space-2); font-size: var(--text-sm); text-align: center; font-family: 'SF Mono', monospace; font-weight: 600;"
-                        placeholder="DD/MM/AAAA" Enabled="False"></asp:TextBox>
+                        style="width: 100%; border: 1px solid var(--gray-300); border-radius: var(--radius-lg); padding: var(--space-2); font-size: var(--text-sm); text-align: center; font-family: 'SF Mono', monospace; font-weight: 600; transition: all 0.3s ease;"
+                        placeholder="DD/MM/AAAA" Enabled="False"
+                        onfocus="this.style.borderColor='var(--primary-500)'; this.style.boxShadow='0 0 0 3px rgba(59, 130, 246, 0.1)';"
+                        onblur="this.style.borderColor = this.value ? 'var(--primary-300)' : 'var(--gray-300)'; this.style.boxShadow='none';"></asp:TextBox>
                     <asp:CalendarExtender ID="CalendarExtender2" runat="server" 
                         TargetControlID="Txt_fechaVie" Format="dd/MM/yyyy"></asp:CalendarExtender>
-                    <div style="margin-top: var(--space-1); display: flex; flex-direction: column; align-items: center; gap: var(--space-1); width: 100%;">
+                    
+                    <!-- Alertas dinámicas para Fecha -->
+                    <div style="position: absolute; bottom: -45px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 4px;">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                             ControlToValidate="Txt_fechaVie" ValidationGroup="Validar_InfoGeneral" 
-                            style="color: #dc2626; font-size: 10px; font-weight: 500; background: #fef2f2; padding: 2px 4px; border-radius: 4px; text-align: center;" 
+                            style="background: linear-gradient(135deg, #fef2f2, #fff); color: #dc2626; font-weight: 500; font-size: 10px; padding: 6px 10px; border-radius: 6px; border: 1px solid #fecaca; box-shadow: 0 3px 8px rgba(220, 38, 38, 0.12); opacity: 0; visibility: hidden; transition: all 0.3s ease; white-space: nowrap; backdrop-filter: blur(6px);" 
                             Text="⚠ Requerido"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
                             ControlToValidate="Txt_fechaVie" ValidationExpression="^\d{1,2}\/\d{1,2}\/\d{4}$" 
                             ValidationGroup="Validar_InfoGeneral" 
-                            style="color: #dc2626; font-size: 10px; font-weight: 500; background: #fef2f2; padding: 2px 4px; border-radius: 4px; text-align: center;" 
+                            style="background: linear-gradient(135deg, #fef2f2, #fff); color: #dc2626; font-weight: 500; font-size: 10px; padding: 6px 10px; border-radius: 6px; border: 1px solid #fecaca; box-shadow: 0 3px 8px rgba(220, 38, 38, 0.12); opacity: 0; visibility: hidden; transition: all 0.3s ease; white-space: nowrap; backdrop-filter: blur(6px);" 
                             Text="⚠ Formato inválido"></asp:RegularExpressionValidator>
                     </div>
                 </div>
@@ -203,33 +218,33 @@
             </div>
         </div>
         
-        <div class="form-content" style="background: white; padding: var(--space-3); border-radius: var(--radius-lg); border: 1px solid var(--gray-200); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div class="form-content" style="background: white; padding: var(--space-3); border-radius: var(--radius-lg); border: 1px solid var(--gray-200); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
             <label style="display: block; font-weight: 600; color: var(--gray-800); margin-bottom: var(--space-2); font-size: var(--text-xs); text-transform: uppercase; text-align: center; width: 100%;">Valor Total (COP) *</label>
             <div style="position: relative; width: 100%; display: flex; justify-content: center;">
                 <span style="position: absolute; left: var(--space-2); top: 50%; transform: translateY(-50%); font-size: var(--text-base); font-weight: 700; color: #059669; z-index: 1;">$</span>
                 <asp:TextBox ID="Txt_Valor" runat="server" 
-                    style="width: 100%; border: 1px solid var(--gray-300); border-radius: var(--radius-lg); padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4); font-size: var(--text-base); text-align: center; font-family: 'SF Mono', monospace; font-weight: 700; color: #059669; background: #f0fdf4;"
-                    MaxLength="15" Enabled="False" placeholder="0,000,000"></asp:TextBox>
+                    style="width: 100%; border: 1px solid var(--gray-300); border-radius: var(--radius-lg); padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4); font-size: var(--text-base); text-align: center; font-family: 'SF Mono', monospace; font-weight: 700; color: #059669; background: #f0fdf4; transition: all 0.3s ease;"
+                    MaxLength="15" Enabled="False" placeholder="0,000,000"
+                    onfocus="this.style.borderColor='#059669'; this.style.boxShadow='0 0 0 3px rgba(5, 150, 105, 0.1)';"
+                    onblur="this.style.borderColor = this.value ? '#10b981' : 'var(--gray-300)'; this.style.boxShadow='none';"></asp:TextBox>
             </div>
-            <div style="margin-top: var(--space-1); display: flex; flex-direction: column; align-items: center; gap: var(--space-1); width: 100%;">
+            
+            <!-- Alertas dinámicas para Valor -->
+            <div style="position: absolute; bottom: -45px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 4px;">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                     ControlToValidate="Txt_Valor" ValidationGroup="Validar_InfoGeneral" 
-                    style="color: #dc2626; font-size: 10px; font-weight: 500; background: #fef2f2; padding: 2px 4px; border-radius: 4px; text-align: center;" 
+                    style="background: linear-gradient(135deg, #fef2f2, #fff); color: #dc2626; font-weight: 500; font-size: 10px; padding: 6px 10px; border-radius: 6px; border: 1px solid #fecaca; box-shadow: 0 3px 8px rgba(220, 38, 38, 0.12); opacity: 0; visibility: hidden; transition: all 0.3s ease; white-space: nowrap; backdrop-filter: blur(6px);" 
                     Text="⚠ Requerido"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                     ControlToValidate="Txt_Valor" ValidationExpression="[0-9]+" 
                     ValidationGroup="Validar_InfoGeneral" 
-                    style="color: #dc2626; font-size: 10px; font-weight: 500; background: #fef2f2; padding: 2px 4px; border-radius: 4px; text-align: center;" 
+                    style="background: linear-gradient(135deg, #fef2f2, #fff); color: #dc2626; font-weight: 500; font-size: 10px; padding: 6px 10px; border-radius: 6px; border: 1px solid #fecaca; box-shadow: 0 3px 8px rgba(220, 38, 38, 0.12); opacity: 0; visibility: hidden; transition: all 0.3s ease; white-space: nowrap; backdrop-filter: blur(6px);" 
                     Text="⚠ Solo números"></asp:RegularExpressionValidator>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-                    
+      
                     <!-- Botones de acción -->
                     <div class="card-actions" style="display: flex; justify-content: center; gap: var(--space-3); padding: var(--space-5);">
                         <asp:LinkButton ID="Btn_Modificar" runat="server" 
